@@ -1,5 +1,9 @@
-require 'sinatra/activerecord/rake'
-require './dockstream'
+desc "Runs a console with the app loaded"
+task :console do
+  require 'data_mapper'
+  require './app'
+  require 'irb'
 
-# Include resque rake tasks
-require 'resque/tasks'
+  ARGV.clear
+  IRB.start
+end
